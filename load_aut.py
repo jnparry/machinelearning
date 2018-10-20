@@ -10,8 +10,8 @@ def load_aut():
 
     # rename columns
     aut_file.columns = ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9', 'Q10', 'Age', 'Gender', 'Ethnicity',
-                       'Jaundice', 'Family_PDD', 'Country', 'Used_App', 'Screening_Score', 'Unknown', 'Person_Testing',
-                       'Target']
+                        'Jaundice', 'Family_PDD', 'Country', 'Used_App', 'Screening_Score', 'Unknown', 'Person_Testing',
+                        'Target']
 
     # drop rows with missing data
     rows_with_missing_data = 0
