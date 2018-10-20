@@ -1,7 +1,7 @@
 import os
 import pandas
+from sklearn.model_selection import train_test_split
 
-from sklearn.model_selection import cross_val_score
 from create_visual import create_visual
 from load_mpg import load_mpg
 from load_car import load_car
@@ -43,8 +43,9 @@ create_visual(car_tree_2, "car_tree_2.png")
 # the data is all the other attributes, the target is the mpg
 mpg_tree = tree.DecisionTreeRegressor(random_state=0, max_depth=5)
 mpg_tree = mpg_tree.fit(mpg_data, mpg_target)
-# print cross_val_score(mpg_tree, mpg_data, mpg_target, cv=10)
 create_visual(mpg_tree, "mpg_tree.png")
+# print cross_val_score(mpg_tree, mpg_data, mpg_target, cv=10)
+# mpgX_train, mpgX_test, mpgy_train, mpgy_test = train_test_split(mpg_data, mpg_target, test_size=0.3, random_state=20)
 
 # BINNING
 # Iris decision tree
@@ -55,10 +56,10 @@ rowAverage = []
 
 # LOOPING THROUGH EACH COLUMN TO GET THE AVERAGE
 for j in range(4):
-    sum = 0
+    sum_total = 0
     for i in range(len(iris.data)):
-        sum += iris.data[i][j]
-    rowAverage.append(sum / len(iris.data))
+        sum_total += iris.data[i][j]
+    rowAverage.append(sum_total / len(iris.data))
 
 # ONLY TWO BINS, DIVIDING LINE IS THE AVERAGE
 for i in range(len(iris.data)):
